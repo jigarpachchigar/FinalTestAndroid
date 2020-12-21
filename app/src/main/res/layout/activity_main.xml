@@ -64,7 +64,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spcon" />
 
     <ImageView
-        android:id="@+id/ivflag"
+        android:id="@+id/ivspot"
         android:layout_width="201dp"
         android:layout_height="143dp"
         android:layout_marginStart="20dp"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivflag" />
+        app:layout_constraintTop_toBottomOf="@+id/ivspot" />
 
     <TextView
         android:id="@+id/textView6"
@@ -134,14 +134,47 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/tvtot"
+        android:id="@+id/tvtotfare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="32dp"
+        android:textColor="@color/red"
         android:text="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/txthead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:textSize="20dp"
+        android:textColor="@color/purple_700"
+        android:text="Tourist Guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtexit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:text="Exit"
+        android:textColor="@color/red"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txthead"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

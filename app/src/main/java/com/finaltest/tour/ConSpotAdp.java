@@ -12,22 +12,27 @@ import java.util.ArrayList;
 
 public class ConSpotAdp extends BaseAdapter {
 
-    private ArrayList<Capital> places;
-    LayoutInflater inflater;
+    private ArrayList<Spot> spots;
+    LayoutInflater lyinf;
 
-    public ConSpotAdp(Context context, ArrayList<Capital>places){
-        this.places=places;
-        inflater=LayoutInflater.from(context);
+    public ConSpotAdp(Context context, ArrayList<Spot>spots){
+        this.spots =spots;
+        lyinf =LayoutInflater.from(context);
+    }
+    static class ViewHolder{
+        ImageView img;
+        TextView spname,spfare;
+
     }
 
     @Override
     public int getCount() {
-        return places.size();
+        return spots.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return places.get(position);
+        return spots.get(position);
     }
 
     @Override
@@ -37,26 +42,26 @@ public class ConSpotAdp extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         ViewHolder holder = new ViewHolder();
+
         if(convertView == null) {
-            convertView = inflater.inflate(R.layout.list_row, null);
-            holder.img = convertView.findViewById(R.id.ivflag);
-            holder.placeName = convertView.findViewById(R.id.txtName);
-            holder.placeRate = convertView.findViewById(R.id.txtPrice);
+
+            convertView = lyinf.inflate(R.layout.list_row, null);
+            holder.img = convertView.findViewById(R.id.ivspot);
+            holder.spname = convertView.findViewById(R.id.tvspname);
+            holder.spfare = convertView.findViewById(R.id.tvspfare);
             convertView.setTag(holder);
         }
         else
             holder = (ViewHolder) convertView.getTag();
-        int id = convertView.getResources().getIdentifier(places.get(position).getConimg(),"drawable",convertView.getContext().getPackageName());
+        int id = convertView.getResources().getIdentifier(spots.get(position).getSpotimg(),"drawable",convertView.getContext().getPackageName());
         holder.img.setImageResource(id);
-        holder.placeName.setText(places.get(position).getConname());
-        holder.placeRate.setText(String.valueOf(places.get(position).getPlaceRate()));
+        holder.spname.setText(spots.get(position).getSpotname());
+        holder.spfare.setText(String.valueOf(spots.get(position).getSpotfare()));
 
         return convertView;
     }
 
-    static class ViewHolder{
-        ImageView img;
-        TextView placeName,placeRate;
-    }
+
 }
